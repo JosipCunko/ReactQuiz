@@ -1,10 +1,8 @@
-function NextButton({
-  dispatch = undefined,
-  answer = undefined,
-  index = undefined,
-  numQuestions = undefined,
-  status = "active",
-}) {
+import { useQuiz } from "../contexts/QuizContext";
+
+function NextButton() {
+  const { dispatch, answer, index, numQuestions } = useQuiz();
+
   //Do this instead of className "hidden" - it will show the button component only if ther is a answer
   if (answer === null) return null;
 
